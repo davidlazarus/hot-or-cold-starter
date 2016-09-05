@@ -26,9 +26,16 @@ function newGame(){
 }
 
 function goFind(){
+  	var guestList = [];
 	$('.button').click(function(){
 		var guess = $('.inputvalue').val();
 		var diff = Math.abs(target - guess);
+    	myPush(guestList, guess);
+    
+    
+    	$('.guessBox').html(guestList);
+   
+  		$('#count').html(function(i, val) { return +val+1 });
 		
 			if (diff>=50) {
 			$('h2#feedback').html('COLD AF!');
@@ -52,11 +59,14 @@ function goFind(){
 	});
 }
 
-
+function myPush(array, val) {
+  array.push(val + ", ");
+  return array;
+}
 
 $(document).ready(function(){
 	
-	displayInformation();
+	  displayInformation();
   	hideInformation();
   	newGame();
   	goFind();
