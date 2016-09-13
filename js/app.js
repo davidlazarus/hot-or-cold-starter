@@ -20,16 +20,6 @@ var distance = null;
 var previousDistance = null;
 
 
-function newGame(){
-	$('	a.new').click(function(){
-    	window.location.reload();
-    	numberOfGuesses = 0;
-        guesses = [];
-        distance = null;
-        previousDistance = null; 	
-    });  
-}
-
 function getGuess() {
     $('.button').click(game);
     $('.inputvalue').keydown(function (enter) {
@@ -48,6 +38,8 @@ function game() {
         guesses.push(guess);
         distance = Math.abs(target - guess);
         previousDistance = Math.abs(target - guesses[guesses.length - 2]);
+        $('.guessBox').html(guesses);
+        $('#count').html(numberOfGuesses);
         if (guess === target) {
             $('h2#feedback').html('Congrats! You got it in ' + numberOfGuesses + ' attempts! The number was ' + target);
         } else {
@@ -85,6 +77,15 @@ function game() {
         }
     }
 
+function newGame(){
+	$('	a.new').click(function(){
+    	window.location.reload();
+    	numberOfGuesses = 0;
+        guesses = [];
+        distance = null;
+        previousDistance = null; 	
+    });  
+}
 
 /*function game(){
   	var guestList = [];
