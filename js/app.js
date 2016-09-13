@@ -12,20 +12,81 @@ function hideInformation(){
   	});
 }
 
-var target = randomInt(1,100);
-function randomInt(min,max)
-	{return Math.floor(Math.random()*(max-min+1)+min);}
-console.log("this is the target");
-console.log(target); 
+var target = Math.floor((Math.random() * 100) + 1);
+console.log("The secret number is: " + answer);
+var numberOfGuesses = 0;
+var guesses = [];
+var distance = null;
+var previousDistance = null;
 
 
 function newGame(){
 	$('	a.new').click(function(){
-    	window.location.reload();  	
+    	window.location.reload();
+    	numberOfGuesses = 0;
+        guesses = [];
+        distance = null;
+        previousDistance = null; 	
     });  
 }
 
-function goFind(){
+function getGuess() {
+    $('.button').click(game);
+    $('.inputvalue').keydown(function (enter) {
+        if (enter.keyCode == 13) {
+            game();
+        }
+    });
+}
+
+
+function game() {
+    var guess = parseInt($('.inputvalue').val());
+    if (guess !== null && $.isNumeric(guess) && (1 < guess < 101)) {
+        $('.inputvalue').val('');
+        numberOfGuesses += 1;
+        guesses.push(guess);
+        distance = Math.abs(target - guess);
+        previousDistance = Math.abs(target - guesses[guesses.length - 2]);
+        if (guess === target) {
+            $('h2#feedback').html('Congrats! You got it in ' + numberOfGuesses + ' attempts! The number was ' + target);
+        } else {
+            console.log(guess, target, previousDistance, distance);
+            if (isNaN(previousDistance)) {
+                if (guess > target) {
+                    $('h2#feedback').html('Guess lower! Last guess: ' + guess);
+                } else if (guess < target) {
+                    $('h2#feedback').html('Guess higher! Last guess: ' + guess);
+                }
+
+            } else if (distance > previousDistance) {
+                if (guess > target) {
+                    $('h2#feedback').html('You\'re getting colder, guess lower! Last guess: ' + guess);
+                } else if (guess < target) {
+                    $('h2#feedback').html('You\'re getting colder, guess higher! Last guess: ' + guess);
+                }
+            } else if (distance < previousDistance) {
+                if (guess > target) {
+                    $('h2#feedback').html('You\'re getting hotter, guess lower! Last guess: ' + guess);
+                } else if (guess < target) {
+                    $('h2#feedback').html('You\'re getting hotter, guess higher! Last guess: ' + guess);
+                }
+            } else if (distance === previousDistance) {
+                if (guess > target) {
+                    $('h2#feedback').html('You\'re on fire, guess lower! Last guess: ' + guess);
+                } else if (guess < target) {
+                    $('h2#feedback').html('You\'re on fire, guess higher! Last guess: ' + guess);
+                }
+            } else {
+                $('h2#feedback').html('ERROR: Your guess must be a number between 1 and 100').css({
+                    color: 'red'
+                });
+            }
+        }
+    }
+
+
+/*function game(){
   	var guestList = [];
 	$('.button').click(function(){
 		var guess = $('.inputvalue').val();
@@ -66,14 +127,14 @@ function goFind(){
 function myPush(array, val) {
   array.push(val + ", ");
   return array;
-}
+}*/
 
 $(document).ready(function(){
 	
-	  displayInformation();
+	displayInformation();
   	hideInformation();
   	newGame();
-  	goFind();
+  	getGuess();
 
 
 });
