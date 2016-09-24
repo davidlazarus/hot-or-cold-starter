@@ -76,6 +76,7 @@ function game() {
             }
         }
     }
+   }
 
 function newGame(){
 	$('	a.new').click(function(){
