@@ -38,6 +38,7 @@ function game() {
         myPush(guesses, guess);
         distance = Math.abs(target - guess);
         previousDistance = Math.abs(target - guesses[guesses.length-2]);
+        console.log(guesses);
 
 
         $('.guessBox').html(guesses);
