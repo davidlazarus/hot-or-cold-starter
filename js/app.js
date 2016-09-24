@@ -13,7 +13,7 @@ function hideInformation(){
 }
 
 var target = Math.floor((Math.random() * 100) + 1);
-console.log("The secret number is: " + answer);
+console.log("The secret number is: " + target);
 var numberOfGuesses = 0;
 var guesses = [];
 var distance = null;
