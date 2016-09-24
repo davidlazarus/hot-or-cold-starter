@@ -107,49 +107,6 @@ function newGame(){
     });  
 }
 
-/*function game(){
-  	var guestList = [];
-	$('.button').click(function(){
-		var guess = $('.inputvalue').val();
-		var diff = Math.abs(target - guess);
-    	myPush(guestList, guess);
-    
-    
-    	$('.guessBox').html(guestList);
-   
-  		$('#count').html(function(i, val) { return +val+1 });
-		
-			if (diff>=50) {
-			$('h2#feedback').html('Cold AF!');
-		}
-
-			else if ((30<=diff) && (diff<=49)) {
-			$('h2#feedback').html('Coldish');
-		}
-
-			else if ((10<=diff) && (diff<=29)) {
-			$('h2#feedback').html('Warm');
-		}
-		
-			else if ((5<=diff) && (diff<=9)) {
-			$('h2#feedback').html('Hawt!');
-		}
-
-			else if ((1<=diff) && (diff<=4)) {
-			$('h2#feedback').html('Boiling!');
-		}
-
-			else {
-			$('h2#feedback').html('Nailed It!');
-		}
-	});
-}
-
-function myPush(array, val) {
-  array.push(val + ", ");
-  return array;
-}*/
-
 $(document).ready(function(){
 	
 	displayInformation();
