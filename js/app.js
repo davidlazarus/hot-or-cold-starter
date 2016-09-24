@@ -35,7 +35,7 @@ function game() {
     if (guess !== null && $.isNumeric(guess) && (1 < guess < 101)) {
         $('.inputvalue').val('');
         numberOfGuesses += 1;
-        guesses.push(guess);
+        myPush(guesses, guess);
         distance = Math.abs(target - guess);
         previousDistance = Math.abs(target - guesses[guesses.length - 2]);
         $('.guessBox').html(guesses);
@@ -77,6 +77,11 @@ function game() {
         }
     }
    }
+
+function myPush(array, val) {
+  	array.push(val + ", ");
+  	return array;
+  }
 
 function newGame(){
 	$('	a.new').click(function(){
