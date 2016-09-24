@@ -31,7 +31,7 @@ function getGuess() {
 
 
 function game() {
-    var guess = parseInt($('.inputvalue').val());
+    var guess = parseInt($(('.inputvalue').val()));
     if (guess !== null && $.isNumeric(guess) && (1 < guess < 101)) {
         $('.inputvalue').val('');
         numberOfGuesses += 1;
