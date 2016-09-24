@@ -47,33 +47,44 @@ function game() {
             if (isNaN(previousDistance)) {
                 if (guess > target) {
                     $('h2#feedback').html('Guess lower! Last guess: ' + guess);
-                } else if (guess < target) {
+                } 
+
+                else if (guess < target) {
                     $('h2#feedback').html('Guess higher! Last guess: ' + guess);
                 }
-
+            	
             	else if (distance > previousDistance) {
-                if (guess > target) {
-                    $('h2#feedback').html('You\'re getting colder, guess lower! Last guess: ' + guess);
-                } else if (guess < target) {
-                    $('h2#feedback').html('You\'re getting colder, guess higher! Last guess: ' + guess);
-                }
-            } else if (distance < previousDistance) {
-                if (guess > target) {
-                    $('h2#feedback').html('You\'re getting hotter, guess lower! Last guess: ' + guess);
-                } else if (guess < target) {
-                    $('h2#feedback').html('You\'re getting hotter, guess higher! Last guess: ' + guess);
-                }
-            } else if (distance === previousDistance) {
-                if (guess > target) {
-                    $('h2#feedback').html('You\'re on fire, guess lower! Last guess: ' + guess);
-                } else if (guess < target) {
+                
+                	if (guess > target) {
+                   	 	$('h2#feedback').html('You\'re getting colder, guess lower! Last guess: ' + guess);
+                	} 
+
+               		else if (guess < target) {
+                   		$('h2#feedback').html('You\'re getting colder, guess higher! Last guess: ' + guess);
+                	}
+            	} 
+
+            	else if (distance < previousDistance) {
+                	if (guess > target) {
+                   		$('h2#feedback').html('You\'re getting hotter, guess lower! Last guess: ' + guess);
+                	} 
+                	else if (guess < target) {
+                   		$('h2#feedback').html('You\'re getting hotter, guess higher! Last guess: ' + guess);
+                	}
+           		} 
+            	else if (distance === previousDistance) {
+                	if (guess > target) {
+                    	$('h2#feedback').html('You\'re on fire, guess lower! Last guess: ' + guess);
+                	} 
+
+                else if (guess < target) {
                     $('h2#feedback').html('You\'re on fire, guess higher! Last guess: ' + guess);
-                }
-            } else {
-                $('h2#feedback').html('ERROR: Your guess must be a number between 1 and 100').css({
-                    color: 'red'
-                });
-            }
+                	}
+            	} 
+
+            	else {
+                	$('h2#feedback').html('ERROR: Your guess must be a number between 1 and 100').css({color: 'red'});
+            	}
         }
     }
   }
