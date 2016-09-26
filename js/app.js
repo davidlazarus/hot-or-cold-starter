@@ -13,6 +13,7 @@ function hideInformation(){
 }
 
 var target = Math.floor((Math.random() * 100) + 1);
+var target =parseInt(target);
 console.log("The secret number is: " + target);
 var numberOfGuesses = 0;
 var guesses = [];
@@ -38,7 +39,7 @@ function game() {
         myPush(guesses, guess);
         distance = Math.abs(target - guess);
         var i = guesses.length;
-		var currentGuess = guesses[i];
+		var currentGuess = guesses[i-1];
 		var previousGuess = guesses[i-2];
         previousDistance = parseInt(target - previousGuess);
         previousDistance = Math.abs(previousDistance);
