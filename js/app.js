@@ -37,12 +37,12 @@ function game() {
         numberOfGuesses += 1;
         myPush(guesses, guess);
         distance = Math.abs(target - guess);
-        var len = guesses.length;
-		var current = guesses[i];
-		var previousGuess = guesses[(i+len-1)%len];
+        var i = guesses.length;
+		var currentGuess = guesses[i];
+		var previousGuess = guesses[i-2];
         previousDistance = parseInt(target - previousGuess);
         previousDistance = Math.abs(previousDistance);
-        console.log(guesses, current, previousGuess);
+        console.log(guesses, currentGuess, previousGuess);
         console.log(previousDistance);
 
         $('.guessBox').html(guesses);
