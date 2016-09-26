@@ -42,8 +42,8 @@ function game() {
 		var previousGuess = guesses[i-2];
         previousDistance = parseInt(target - previousGuess);
         previousDistance = Math.abs(previousDistance);
-        console.log("this is the guesses array" guesses, "this is the current guess" currentGuess, "this is the previous guess" previousGuess);
-        console.log("this is the target minus the previous guess" previousDistance);
+        console.log("this is the guesses array" + guesses + "this is the current guess" + currentGuess + "this is the previous guess" + previousGuess);
+        console.log("this is the target minus the previous guess" + previousDistance);
 
         $('.guessBox').html(guesses);
         $('#count').html(numberOfGuesses);
@@ -56,7 +56,7 @@ function game() {
 			$('h2#feedback').html('Your guess must be a number between 1 and 100').css({color: 'red'});
         }
          	else {
-            console.log("guess, target, previousDistance, distance" guess, target, previousDistance, distance);
+            console.log("guess, target, previousDistance, distance" + guess, target, previousDistance, distance);
             if (previousGuess = 'undefined') {
                 if (guess > target) {
                     $('h2#feedback').html('Guess lower! Last guess: ' + guess);
