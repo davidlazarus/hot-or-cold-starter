@@ -37,10 +37,11 @@ function game() {
         numberOfGuesses += 1;
         myPush(guesses, guess);
         distance = Math.abs(target - guess);
-        previousDistance = Math.abs(target - guesses[(guesses.length)-2]);
+        previousGuess = guesses[(guesses.length)-2];
+        previousDistance = Math.abs(target - previousGuess);
         previousDistance = parseInt(previousDistance);
         console.log(guesses);
-
+        console.log(previousGuess);
 
         $('.guessBox').html(guesses);
         $('#count').html(numberOfGuesses);
@@ -54,7 +55,7 @@ function game() {
         }
          	else {
             console.log(guess, target, previousDistance, distance);
-            if (isNaN(distance)) {
+            if (isNaN(previousDistance)) {
                 if (guess > target) {
                     $('h2#feedback').html('Guess lower! Last guess: ' + guess);
                 } else if (guess < target) {
