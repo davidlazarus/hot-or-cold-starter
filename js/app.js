@@ -32,8 +32,8 @@ function getGuess() {
 
 
 function game() {
-    var guess = parseInt($('.inputvalue').val());
-    if (guess !== null && $.isNumeric(guess) && (1 < guess < 101)) {
+    var guess = +$('.inputvalue').val();
+    if (guess !== null && (1 < guess < 101)) {
         $('.inputvalue').val('');
         numberOfGuesses += 1;
         myPush(guesses, guess);
@@ -42,6 +42,7 @@ function game() {
 		var currentGuess = +guesses[i-1];
 		var previousGuess = +guesses[i-2];
         previousDistance = target - previousGuess;
+
         console.log("this is the guesses array" + guesses + "this is the current guess" + currentGuess + "this is the previous guess" + previousGuess);
         console.log("this is the target minus the previous guess" + previousDistance);
 
