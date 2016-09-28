@@ -99,7 +99,7 @@ function game() {
 
 
 function myPush(array, val) {
-  	array.push(val + ", ");
+  	array.push(val + ",");
   	return array;
   }
 
