@@ -61,7 +61,7 @@ function game() {
 
          	else {
             console.log("guess, target, previousDistance, distance" + guess, target, previousDistance, distance);
-            if ( previousGuess === NaN) {
+            if (previousGuess == NaN) {
                 if (guess > target) {
                     $('h2#feedback').html('Guess lower! Last guess: ' + guess);
                 } else if (guess < target) {
