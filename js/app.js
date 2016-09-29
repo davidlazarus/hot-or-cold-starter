@@ -62,7 +62,7 @@ function game() {
 
          	else {
             console.log("guess, target, previousDistance, distance" + guess, target, previousDistance, distance);
-            if (previousGuess == 'NaN') {
+            if ( previousGuess === 'NaN') {
                 if (guess > target) {
                     $('h2#feedback').html('Guess lower! Last guess: ' + guess);
                 } else if (guess < target) {
@@ -95,7 +95,7 @@ function game() {
             } 
 
             else {
-                $('h2#feedback').html('ERROR: Your guess must be a number between 1 and 100').css({color: 'red'});
+                $('h2#feedback').html('ERROR: Your guess must be a number between 1 and 100');
             }
         }
     }
