@@ -43,7 +43,6 @@ function game() {
 		currentGuess = parseInt(currentGuess);
 		previousGuess = parseInt(previousGuess);
         previousDistance = target - previousGuess;
-
         console.log("this is the guesses array" + guesses + "this is the current guess" + currentGuess + "this is the previous guess" + previousGuess);
         console.log("this is the distance" + distance);
         console.log("this is the pewvious distance" + previousDistance);
