@@ -5,7 +5,6 @@ function displayInformation(){
   	});
 }
 
-/*--- Hide information modal box ---*/
 function hideInformation(){
 	$("a.close").click(function(){
   		$(".overlay").fadeOut(1000);
