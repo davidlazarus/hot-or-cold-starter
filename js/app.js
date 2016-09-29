@@ -54,6 +54,7 @@ function game() {
         $('.guessBox').html(guesses);
         $('#count').html(numberOfGuesses);
 
+
         	if (guess === target) {
             $('h2#feedback').html('Congrats! You got it in ' + numberOfGuesses + ' attempts! The number was ' + target);
         	}
