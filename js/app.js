@@ -44,7 +44,8 @@ function game() {
         previousDistance = target - previousGuess;
 
         console.log("this is the guesses array" + guesses + "this is the current guess" + currentGuess + "this is the previous guess" + previousGuess);
-        console.log("this is the target minus the previous guess" + previousDistance);
+        console.log("this is the distance" + distance);
+        console.log("this is the pewvious distance" + previousDistance);
 
         $('.guessBox').html(guesses);
         $('#count').html(numberOfGuesses);
