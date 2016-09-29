@@ -39,8 +39,10 @@ function game() {
         myPush(guesses, guess);
         distance = Math.abs(target - guess);
         var i = guesses.length;
-		var currentGuess = +guesses[i-1];
+		var currentGuess = guesses[i-1];
+		currentGuess = parseInt(currentGuess);
 		var previousGuess = +guesses[i-2];
+		previousGuess = parseInt(previousGuess);
         previousDistance = target - previousGuess;
 
         console.log("this is the guesses array" + guesses + "this is the current guess" + currentGuess + "this is the previous guess" + previousGuess);
