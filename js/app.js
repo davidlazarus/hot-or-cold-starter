@@ -43,7 +43,6 @@ function game() {
 		var currentGuess = guesses[i-1];
 		currentGuess = parseInt(currentGuess);
 		var previousGuess = guesses[i-2];
-
 		previousGuess = parseInt(previousGuess);
         previousDistance = target - previousGuess;
 
