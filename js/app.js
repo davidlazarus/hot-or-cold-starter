@@ -17,9 +17,6 @@ var target =parseInt(target);
 console.log("The secret number is: " + target);
 var numberOfGuesses = 0;
 var guesses = [];
-/*var distance = null;
-var previousDistance = null;*/
-
 
 function getGuess() {
     $('.button').click(game);
