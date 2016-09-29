@@ -52,15 +52,17 @@ function game() {
         $('.guessBox').html(guesses);
         $('#count').html(numberOfGuesses);
 
-        if (guess === target) {
+        	if (guess === target) {
             $('h2#feedback').html('Congrats! You got it in ' + numberOfGuesses + ' attempts! The number was ' + target);
-        }
+        	}
+
         	else if (guess < 1 || 100 < guess){
 			$('h2#feedback').html('Your guess must be a number between 1 and 100').css({color: 'red'});
-        }
+        	}
+
          	else {
             console.log("guess, target, previousDistance, distance" + guess, target, previousDistance, distance);
-            if (previousGuess == 'undefined') {
+            if (previousGuess == 'NaN') {
                 if (guess > target) {
                     $('h2#feedback').html('Guess lower! Last guess: ' + guess);
                 } else if (guess < target) {
